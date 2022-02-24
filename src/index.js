@@ -6,7 +6,10 @@ function Tweet() {
   return (
     <div className='tweet'>
       <Avatar />
-      Tweet
+      <div className='content'>
+        <Author />
+        <Message />
+      </div>
     </div>
   );
 }
@@ -20,5 +23,18 @@ function Avatar() {
       className='avatar'
       alt='avatar'
     />
+  );
+}
+
+function Message() {
+  return <div className='message'>This is less than 40 characters</div>;
+}
+
+function Author() {
+  return (
+    <span className='author'>
+      <span className='name'>Your Name</span>
+      <span className='handle'>@handle</span>
+    </span>
   );
 }
