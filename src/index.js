@@ -24,7 +24,7 @@ function Tweet() {
 function Avatar() {
   return (
     <img
-      src='https://www.gravatar.com/avatar/nothing'
+      src='https://cdn-icons.flaticon.com/png/512/2202/premium/2202112.png?token=exp=1645725295~hmac=d7228fa2ef5f1dfe97c0ddc52bd5360c'
       className='avatar'
       alt='avatar'
     />
@@ -32,7 +32,11 @@ function Avatar() {
 }
 
 function Message() {
-  return <div className='message'>This is less than 40 characters</div>;
+  return (
+    <div className='message'>
+      This is how we need to affect the next generation positively.
+    </div>
+  );
 }
 
 function Author() {
