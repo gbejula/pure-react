@@ -30,7 +30,7 @@ const testTweet = {
     name: 'Olugbenga',
   },
   likes: 2,
-  retweets: 0,
+  retweets: 17,
   timestamp: '2016-07-30 21:24:37',
 };
 
@@ -69,7 +69,7 @@ function getRetweetCount(count) {
 }
 const ReplyButton = () => <i className='fa fa-reply reply-button' />;
 const RetweetButton = ({ count }) => (
-  <span className='retweet-buttton'>
+  <span className='retweet-button'>
     <i className='fa fa-retweet' />
     {getRetweetCount(count)}
   </span>
