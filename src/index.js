@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import moment from 'moment';
+import PropTypes from 'prop-types';
 
 function Tweet({ tweet }) {
   return (
@@ -68,6 +69,7 @@ function getRetweetCount(count) {
   }
 }
 const ReplyButton = () => <i className='fa fa-reply reply-button' />;
+
 const RetweetButton = ({ count }) => (
   <span className='retweet-button'>
     <i className='fa fa-retweet' />
@@ -83,5 +85,32 @@ const LikeButton = ({ count }) => (
 const MoreOptionsButton = () => (
   <i className='fa fa-ellipsis-h more-options-button' />
 );
+
+LikeButton.propTypes = {
+  count: PropTypes.number,
+};
+
+RetweetButton.propTypes = {
+  count: PropTypes.number,
+};
+
+Message.propTypes = {
+  text: PropTypes.string,
+};
+
+Time.propTypes = {
+  time: PropTypes.string,
+};
+
+Author.propTypes = {
+  author: PropTypes.shape({
+    name: PropTypes.string.isRequired,
+    handle: PropTypes.string.isRequired,
+  }).isRequired,
+};
+
+Avatar.propTypes = {
+  hash: PropTypes.string,
+};
 
 ReactDOM.render(<Tweet tweet={testTweet} />, document.querySelector('#root'));
