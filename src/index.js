@@ -23,6 +23,23 @@ function Tweet({ tweet }) {
   );
 }
 
+function AddressLabel({ info }) {
+  return (
+    <div>
+      <Person name={info.name} />
+      <Address address={info.address} />
+    </div>
+  );
+}
+
+function Envelope() {
+  return (
+    <div className='envelope'>
+      <AddressLabel className='middle-contact' info={person} />
+    </div>
+  );
+}
+
 const testTweet = {
   message: 'Something about cats.',
   gravatar: 'xyz',
@@ -35,7 +52,16 @@ const testTweet = {
   timestamp: '2016-07-30 21:24:37',
 };
 
+const person = {
+  name: 'Full Name',
+  address: '123, Fake St. Boston, MA 02118.',
+};
+
 // https://cdn-icons.flaticon.com/png/512/2202/premium/2202112.png?token=exp=1645725295~hmac=d7228fa2ef5f1dfe97c0ddc52bd5360c'
+
+const Person = ({ name }) => <p className='name'>{name}</p>;
+
+const Address = ({ address }) => <div className='address'>{address}</div>;
 
 function Avatar({ hash }) {
   const url = `https://www.gravatar.com/avatar/${hash}`;
@@ -113,4 +139,7 @@ Avatar.propTypes = {
   hash: PropTypes.string,
 };
 
-ReactDOM.render(<Tweet tweet={testTweet} />, document.querySelector('#root'));
+ReactDOM.render(<Envelope />, document.querySelector('#root'));
+
+//<Tweet tweet={testTweet} />   -- Tweet component
+//<AddressLabel info={person} />

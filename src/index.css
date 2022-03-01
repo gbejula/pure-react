@@ -56,3 +56,24 @@
   margin-left: 5px;
   font-weight: bold;
 }
+
+.envelope {
+  border: 1px solid gray;
+  width: 750px;
+  min-height: 350px;
+  padding: 20px;
+}
+
+.address {
+  margin-top: 0;
+  width: 130px;
+}
+
+.name {
+  margin: 0;
+}
+
+.middle-contact {
+  display: flex;
+  justify-content: center;
+}
